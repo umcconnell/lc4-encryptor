@@ -1,5 +1,13 @@
 @import url("./normalize.css");
 
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #7cb518;
+}
+
 body,
 html {
   font-size: 18px;
@@ -13,7 +21,7 @@ html {
 }
 
 header {
-  background-color: #7cb518;
+  background-color: var(--main-color);
   color: #fff;
   font-size: 1em;
 }
@@ -33,5 +41,20 @@ footer {
 }
 
 footer a {
+  color: #fff;
+}
+
+.cta-link {
+  margin-top: 1em;
+  padding: .5em 1.5em;
+  border: 2px solid var(--main-color);
+  background: none;
+  text-decoration: none;
+  color: currentColor;
+  cursor: pointer;
+}
+
+.cta-link:active {
+  background-color: var(--main-color);
   color: #fff;
 }
