@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>LC4 encryptor</title>
+    <title>LC4 encryptor | Encryptor</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style/style.css">
-  </head>  
+    <script src="/script.js" type="module" defer></script>
+  </head>
   <body>
     <header>
       <h1>LC4 encryptor</h1>
     </header>
-    
+    <p class="navbar">
+      <a href="./index.html">Home</a> / <a href="./encryptor.html">Encryptor</a>
+    </p>
     <main>
-      <h2>About</h2>
-      <p>
-        LC4 and it's variant LS47 are low tech ciphers intended for human to human
-        communicationthat can be computed by hand, but at the same time offer high
-        security. Click here to <a href="./information.html">learn more about LC4 and LS47</a>.
-      </p>
-      <p>
-        <a href="./encryptor.html" class="cta-link">
-          Let's go &rarr;
-        </a>
-      </p>
+      <div class="encryptor">
+        <div class="encryptor__header">
+          Encrypt <button class="btn-none" id="encryptorFlip">&#8644;</button> Decrypt 
+        </div>
+        <div class="encryptor__content">
+          <textarea></textarea>
+          <textarea></textarea>
+        </div>
+      </div>
     </main>
     
     <footer>
