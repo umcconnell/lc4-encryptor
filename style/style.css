@@ -44,8 +44,15 @@ footer a {
   color: #fff;
 }
 
+.navbar {
+  text-align: left;
+  padding: 0 1em;
+  margin-bottom: 0;
+}
+
 a {
-  color: 
+  color: currentColor;
+  cursor: pointer;
 }
 
 .cta-link {
@@ -56,8 +63,6 @@ a {
   border: 2px solid var(--main-color);
   background: none;
   text-decoration: none;
-  color: currentColor;
-  cursor: pointer;
 }
 
 .cta-link:active {
