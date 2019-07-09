@@ -44,9 +44,15 @@ footer a {
   color: #fff;
 }
 
+a {
+  color: 
+}
+
 .cta-link {
-  margin-top: 1em;
-  padding: .5em 1.5em;
+  margin-top: 2em;
+  display: inline-block;
+  padding: .75em 2em;
+  box-shadow: 4px 4px 0 0 #555;
   border: 2px solid var(--main-color);
   background: none;
   text-decoration: none;
@@ -57,4 +63,5 @@ footer a {
 .cta-link:active {
   background-color: var(--main-color);
   color: #fff;
+  box-shadow: none;
 }
