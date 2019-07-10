@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style/style.css">
-    <style>main{max-width: 100vw}</style>
+    <style>
+      main
+      {max-width: 100vw}
+    
+    </style>
     <script src="/script.js" type="module" defer></script>
   </head>
   <body>
@@ -27,13 +31,37 @@
           <textarea id="clearText"></textarea>
           <textarea id="cipherText"></textarea>
         </div>
-        <label for="key">Key:</label>
-        <div class="input-container">
-          <input type="text" id="key">
-          <button id="generateKey" class="input-container__icon">
-            &#10541;
-          </button>
-        </div>
+        <p>
+          <label for="key">Key:</label>
+          <div class="input-container">
+            <input type="text" id="key">
+            <button id="generateKey" class="input-container__icon">
+              &#10541;
+            </button>
+          </div>
+        </p>
+        <p>
+          <label for="nonce">Nonce:</label>
+          <div class="input-container">
+            <input type="text" id="nonce">
+            <button id="generateNonce" class="input-container__icon">
+              &#10541;
+            </button>
+          </div>
+        </p>
+        <p>
+          <label for="Signature">Signature:</label>
+          <div class="input-container">
+            <input type="text" id="signature">
+            <button id="generateSignature" class="input-container__icon">
+              &#10541;
+            </button>
+          </div>
+        </p>
+        <p>
+          <label for="headerData">Header Data:</label>
+          <input type="text" id="headerData">
+        </p>
       </div>
     </main>
     
