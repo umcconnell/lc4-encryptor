@@ -1,0 +1,9 @@
+label {
+  display: block;
+  text-align: left;
+}
+
+.input-container {
+  display: block;
+  position: relative;
+}
