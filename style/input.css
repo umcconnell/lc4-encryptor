@@ -3,7 +3,27 @@ label {
   text-align: left;
 }
 
+input {
+  width: 100%M
+  font-size: 1rem;
+  padding: .75em;
+}
+
 .input-container {
   display: block;
   position: relative;
+}
+
+.input-container input {
+  width: 100%
+}
+
+.input-container .input-container__icon {
+  position: absolute;
+  right: 0;
+  background: none;
+  border: none;
+  height: 100%;
+  font-size: 2rem;
+  font-weight: thin;
 }
