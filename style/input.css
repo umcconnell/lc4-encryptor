@@ -1,12 +1,14 @@
 label {
   display: block;
   text-align: left;
+  margin: 1em 0 .5em 0;
 }
 
 input {
   width: 100%M
   font-size: 1rem;
   padding: .75em;
+  border: 1px solid #ddd;
 }
 
 .input-container {
@@ -24,6 +26,6 @@ input {
   background: none;
   border: none;
   height: 100%;
-  font-size: 2rem;
-  font-weight: thin;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
