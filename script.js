@@ -6,11 +6,15 @@ let switcher = document.getElementById("encryptorFlip"),
     textareas = document.getElementsByTagName("textarea"),
     methodLabels = [...document.querySelectorAll(".encryptor__label")];
 
-let key = {
-  input: document.getElementById("key"),
-  btn: document.getElementById("generateKey")
-};
-let nonce = 
+let [key, nonce, signature] = ["key", "nonce", "signature"].map(
+    el => {
+      let input = document.getElementById(el);
+      
+      
+    }
+);
+
+let headerData = {input: document.getElementById("headerData")};
 
 function switchUI() {
   // Flip textareas
@@ -27,4 +31,5 @@ switcher.addEventListener("click", () => {
   method = method === "encrypt" ? "decrypt" : "encrypt";
 });
 
-key.value = lc4.generateKey(null, mode);
+key.input.value = lc4.generateKey(null, mode);
+nonce.input.value = lc4.generateNonce(10, mode);
