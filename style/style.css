@@ -70,3 +70,18 @@ a {
   color: #fff;
   box-shadow: none;
 }
+
+button {
+  cursor: pointer;
+}
+
+.btn--none {
+  font-size: 1rem;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.btn--padded {
+  padding: .5em 1em;
+}
