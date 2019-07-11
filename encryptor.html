@@ -35,7 +35,7 @@
       <div class="encryptor">
         <div class="encryptor__header">
           <span class="encryptor__label">Plaintext</span>
-          <button class="btn--none btn--padded" id="encryptorFlip">&#8644;</button>
+          <button class="btn--none btn--padded btn--margin" id="encryptorFlip">&#x2942;</button>
           <span class="encryptor__label">Ciphertext</span>
         </div>
         <textarea id="clearText"></textarea>
@@ -46,7 +46,7 @@
       <div class="input-container">
         <input type="text" id="key">
         <button id="generateKey" class="input-container__icon">
-          &#10541;
+          &#9860;
         </button>
       </div>
       
@@ -54,7 +54,7 @@
       <div class="input-container">
         <input type="text" id="nonce">
         <button id="generateNonce" class="input-container__icon">
-          &#10541;
+          &#9860;
         </button>
       </div>
         
@@ -62,7 +62,7 @@
       <div class="input-container">
         <input type="text" id="signature">
         <button id="generateSignature" class="input-container__icon">
-          &#10541;
+          &#9860;
         </button>
       </div>
 
@@ -80,13 +80,5 @@
 
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
-    <script>
-      let btn = document.getElementById("encryptorFlip");
-      
-      btn.addEventListener("click", () => {
-        let textareas = document.getElementsByTagName("textarea");
-        textareas[1].parentNode.insertBefore(textareas[1], textareas[0]);
-      })
-    </script>
   </body>
 </html>

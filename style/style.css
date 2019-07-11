@@ -96,3 +96,7 @@ button:focus {
 .btn--padded {
   padding: .5em 1em;
 }
+
+.btn--margin {
+  margin: 0 1em;
+}
