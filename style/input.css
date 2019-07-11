@@ -12,11 +12,7 @@ textarea {
 }
 
 input {
-    width: 100%;
-}
-
-textarea {
-  min-width: 25em;
+  width: 100%;
 }
 
 .input-container {
