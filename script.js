@@ -14,7 +14,11 @@ let key = document.getElementById("key"),
     headerData = document.getElementById("headerData");
 
 function update() {
-  
+  textareas[1].value = lc4[method]({
+    mode,
+    // Remove \n
+    message: textareas[0]
+  });
 }
 
 function switchUI() {
