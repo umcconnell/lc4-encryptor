@@ -6,15 +6,16 @@ let switcher = document.getElementById("encryptorFlip"),
     textareas = document.getElementsByTagName("textarea"),
     methodLabels = [...document.querySelectorAll(".encryptor__label")];
 
-let [key, nonce, signature] = ["key", "nonce", "signature"].map(
-    el => {
-      let input = document.getElementById(el);
-      
-      
-    }
-);
+let key = document.getElementById("key"),
+    keyBtn = document.getElementById("generateKey"),
+    nonce = document.getElementById("nonce"),
+    nonceBtn = document.getElementById("generateNonce"),
+    signature = document.getElementById("signature"),
+    headerData = document.getElementById("headerData");
 
-let headerData = {input: document.getElementById("headerData")};
+function update() {
+  
+}
 
 function switchUI() {
   // Flip textareas
@@ -26,10 +27,23 @@ function switchUI() {
   methodLabels.reverse();
 }
 
-switcher.addEventListener("click", () => {
-  switchUI();
-  method = method === "encrypt" ? "decrypt" : "encrypt";
-});
+function setup() {
+  key.value = lc4.generateKey(null, mode);
+  nonce.value = lc4.generateNonce(10, mode);
+  
+  keyBtn.addEventListener("click", () => {
+    key.value = lc4.generateKey(null, mode);
+    update();
+  });
+  nonceBtn.addEventListener("click", () => {
+    nonce.value = lc4.generateNonce(10, mode);
+    update();
+  });
+  
+  switcher.addEventListener("click", () => {
+    switchUI();
+    method = method === "encrypt" ? "decrypt" : "encrypt";
+  });
+}
 
-key.input.value = lc4.generateKey(null, mode);
-nonce.input.value = lc4.generateNonce(10, mode);
+setup();
