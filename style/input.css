@@ -15,6 +15,11 @@ input {
   width: 100%;
 }
 
+textarea {
+  min-height: 10em;
+  resize: vertical
+}
+
 .input-container {
   display: block;
   position: relative;
