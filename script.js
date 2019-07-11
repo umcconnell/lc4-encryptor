@@ -2,8 +2,15 @@ import * as lc4 from "https://cdn.jsdelivr.net/gh/umcconnell/lc4/dist/main.js";
 
 let switcher = document.getElementById("encryptorFlip"),
     method = "encrypt",
+    mode = "lc4",
     textareas = document.getElementsByTagName("textarea"),
     methodLabels = [...document.querySelectorAll(".encryptor__label")];
+
+let key = {
+  input: document.getElementById("key"),
+  btn: document.getElementById("generateKey")
+};
+let nonce = 
 
 function switchUI() {
   // Flip textareas
@@ -17,4 +24,7 @@ function switchUI() {
 
 switcher.addEventListener("click", () => {
   switchUI();
+  method = method === "encrypt" ? "decrypt" : "encrypt";
 });
+
+key.value = lc4.generateKey(null, mode);
