@@ -16,8 +16,7 @@ input {
 }
 
 textarea {
-  width: 26em;
-  max-width: 100%;
+  min-width: 25em;
 }
 
 .input-container {

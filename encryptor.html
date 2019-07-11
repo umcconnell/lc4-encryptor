@@ -15,6 +15,11 @@
       input {
         width: 100%;
       }
+      
+      .encryptor__content {
+        display: flex;
+        flex-wrap: 
+      }
     </style>
     <script src="/script.js" type="module" defer></script>
   </head>
@@ -32,10 +37,9 @@
           <button class="btn-none" id="encryptorFlip">&#8644;</button>
           <span class="encryptor__label">Decrypt</span> 
         </div>
-        <div class="encryptor__content">
-          <textarea id="clearText"></textarea>
-          <textarea id="cipherText"></textarea>
-        </div>
+        <textarea id="clearText"></textarea>
+        <textarea id="cipherText"></textarea>
+      </div>
         
         <label for="key">Key:</label>
         <div class="input-container">
