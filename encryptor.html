@@ -84,8 +84,8 @@
       let btn = document.getElementById("encryptorFlip");
       
       btn.addEventListener("click", () => {
-        var textareas = document.getElementsByTagName("textarea");
-        textareas[1].parentNode.insertBefore(divs[0], divs[1]);
+        let textareas = document.getElementsByTagName("textarea");
+        textareas[1].parentNode.insertBefore(textareas[1], textareas[0]);
       })
     </script>
   </body>
