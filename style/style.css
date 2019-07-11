@@ -73,6 +73,17 @@ a {
 
 button {
   cursor: pointer;
+  border: 2px solid var(--main-color);
+}
+
+button:hover,
+button:focus {
+  color: var(--main-color);
+}
+
+button:focus {
+  border-color: var(--main-color);
+  outline: none;
 }
 
 .btn--none {

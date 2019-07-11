@@ -42,33 +42,32 @@
         <textarea id="cipherText"></textarea>
       </div>
         
-        <label for="key">Key:</label>
-        <div class="input-container">
-          <input type="text" id="key">
-          <button id="generateKey" class="input-container__icon">
-            &#10541;
-          </button>
-        </div>
-        
-        <label for="nonce">Nonce:</label>
-        <div class="input-container">
-          <input type="text" id="nonce">
-          <button id="generateNonce" class="input-container__icon">
-            &#10541;
-          </button>
-        </div>
-          
-        <label for="Signature">Signature:</label>
-        <div class="input-container">
-          <input type="text" id="signature">
-          <button id="generateSignature" class="input-container__icon">
-            &#10541;
-          </button>
-        </div>
-  
-        <label for="headerData">Header Data:</label>
-        <input type="text" id="headerData">
+      <label for="key">Key:</label>
+      <div class="input-container">
+        <input type="text" id="key">
+        <button id="generateKey" class="input-container__icon">
+          &#10541;
+        </button>
       </div>
+      
+      <label for="nonce">Nonce:</label>
+      <div class="input-container">
+        <input type="text" id="nonce">
+        <button id="generateNonce" class="input-container__icon">
+          &#10541;
+        </button>
+      </div>
+        
+      <label for="Signature">Signature:</label>
+      <div class="input-container">
+        <input type="text" id="signature">
+        <button id="generateSignature" class="input-container__icon">
+          &#10541;
+        </button>
+      </div>
+
+      <label for="headerData">Header Data:</label>
+      <input type="text" id="headerData">
     </main>
     
     <footer>
@@ -81,5 +80,13 @@
 
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
+    <script>
+      let btn = document.getElementById("encryptorFlip");
+      
+      btn.addEventListener("click", () => {
+        var textareas = document.getElementsByTagName("textarea");
+        textareas[1].parentNode.insertBefore(divs[0], divs[1]);
+      })
+    </script>
   </body>
 </html>
