@@ -15,18 +15,6 @@ let key = document.getElementById("key"),
     headerData = document.getElementById("headerData");
 
 let update = debounce(function () {  
-  console.log(
-  {
-    mode,
-    // Remove \n
-    message: textareas[0].value.replace(/[\n\r]/g, ""),
-    key: key.value,
-    nonce: !!nonce.value && nonce.value,
-    signature: !!signature.value && signature.value,
-    headerData: !!headerData.value && headerData
-  }
-  );
-  
   textareas[1].value = lc4[method]({
     mode,
     // Remove \n
@@ -36,7 +24,7 @@ let update = debounce(function () {
     signature: !!signature.value && signature.value,
     headerData: !!headerData.value && headerData
   });
-}, 500);
+}, 250);
 
 function switchUI() {
   // Flip textareas
@@ -49,6 +37,11 @@ function switchUI() {
 }
 
 function setup() {
+  document.body.addEventListener("input", () => {
+    console.log("Hi");
+    update()
+  });
+  
   key.value = lc4.generateKey(null, mode);
   nonce.value = lc4.generateNonce(10, mode);
   
@@ -64,6 +57,7 @@ function setup() {
   switcher.addEventListener("click", () => {
     switchUI();
     method = method === "encrypt" ? "decrypt" : "encrypt";
+    update();
   });
 }
 
