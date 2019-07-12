@@ -1,4 +1,4 @@
-import * as lc4 from "https://cdn.jsdelivr.net/gh/umcconnell/lc4/dist/main.js";
+import * as lc4 from "https://cdn.jsdelivr.net/gh/umcconnell/lc4@1/dist/main.js";
 import { debounce } from "./helpers.js";
 
 let switcher = document.getElementById("encryptorFlip"),
@@ -18,13 +18,13 @@ let update = debounce(function () {
   textareas[1].value = lc4[method]({
     mode,
     // Remove \n
-    message: textareas[0].value.replace(/[\n\r]/g, ""),
+    message: textareas[0].value.split("\n"),
     key: key.value,
     nonce: !!nonce.value && nonce.value,
     signature: !!signature.value && signature.value,
     headerData: !!headerData.value && headerData
-  });
-}, 250);
+  }).join("\n");
+}, 500);
 
 function switchUI() {
   // Flip textareas
