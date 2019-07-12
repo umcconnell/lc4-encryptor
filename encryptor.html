@@ -34,15 +34,15 @@
     <main>
       <div class="encryptor">
         <div class="encryptor__header">
-          <span class="encryptor__label">Plaintext</span><button class="btn--none btn--padded btn--margin" id="encryptorFlip">&#x2942;</button><span class="encryptor__label">Ciphertext</span>
+          <span class="encryptor__label">Cleartext</span><button class="btn--none btn--padded btn--margin" id="encryptorFlip">&#x2942;</button><span class="encryptor__label">Ciphertext</span>
         </div>
-        <textarea id="clearText"></textarea>
-        <textarea id="cipherText"></textarea>
+        <textarea id="clearText" placeholder="Cleartext..."></textarea>
+        <textarea id="cipherText" placeholder="Ciphertext..."></textarea>
       </div>
         
       <label for="key">Key or Password:</label>
       <div class="input-container">
-        <input type="text" id="key">
+        <input type="text" id="key" placeholder="e.g. my_super_secret_password">
         <button id="generateKey" class="input-container__icon">
           &#9860;
         </button>

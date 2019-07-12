@@ -14,11 +14,27 @@ let key = document.getElementById("key"),
     signature = document.getElementById("signature"),
     headerData = document.getElementById("headerData");
 
-let update = debounce(function () {
+let update = debounce(function () {  
+  console.log(
+  {
+    mode,
+    // Remove \n
+    message: textareas[0].value.replace(/[\n\r]/g, ""),
+    key: key.value,
+    nonce: !!nonce.value && nonce.value,
+    signature: !!signature.value && signature.value,
+    headerData: !!headerData.value && headerData
+  }
+  );
+  
   textareas[1].value = lc4[method]({
     mode,
     // Remove \n
-    message: textareas[0]
+    message: textareas[0].value.replace(/[\n\r]/g, ""),
+    key: key.value,
+    nonce: !!nonce.value && nonce.value,
+    signature: !!signature.value && signature.value,
+    headerData: !!headerData.value && headerData
   });
 }, 500);
 
