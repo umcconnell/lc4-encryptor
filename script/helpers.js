@@ -13,3 +13,7 @@ export function debounce(func, wait, immediate) {
 		if (callNow) func.apply(context, args);
 	};
 };
+
+export function insertSnackbar({type = "error", id = "snackbar" + type.slice(0, 1).toUpperCase() + type.slice(1)}) {
+  
+}
