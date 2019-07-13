@@ -1,4 +1,4 @@
-import * as lc4 from "https://cdn.jsdelivr.net/gh/umcconnell/lc4@1/dist/main.js";
+import * as lc4 from "https://cdn.jsdelivr.net/gh/umcconnell/lc4@3/dist/main.js";
 import { debounce, showSnackbar, createSnackbar } from "./helpers.js";
 
 let method = "encrypt",
@@ -55,11 +55,11 @@ function setup() {
   nonce.value = lc4.generateNonce(10, mode);
   
   keyBtn.addEventListener("click", () => {
-    key.value = lc4.generateKey(null, mode);
+    key.value = lc4.generateKey(mode);
     update();
   });
   nonceBtn.addEventListener("click", () => {
-    nonce.value = lc4.generateNonce(10, mode);
+    nonce.value = lc4.generateNonce(mode);
     update();
   });
   
