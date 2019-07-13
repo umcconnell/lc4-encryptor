@@ -14,17 +14,20 @@ let key = document.getElementById("key"),
     signature = document.getElementById("signature"),
     headerData = document.getElementById("headerData");
 
-let update = debounce(function () {  
-  textareas[1].value = lc4[method]({
-    mode,
-    // Remove \n
-    message: textareas[0].value.split("\n"),
-    key: key.value,
-    nonce: !!nonce.value && nonce.value,
-    signature: !!signature.value && signature.value,
-    headerData: !!headerData.value && headerData
-  }).join("\n");
-}, 500);
+let update = debounce(function () {
+  try {
+    textareas[1].value = lc4[method]({
+      mode,
+      message: textareas[0].value.split("\n"),
+      key: key.value,
+      nonce: !!nonce.value && nonce.value,
+      signature: !!signature.value && signature.value,
+      headerData: !!headerData.value && headerData
+    }).join("\n");
+  } catch(err) {
+    console.log(err);
+  }
+}, 250);
 
 function switchUI() {
   // Flip textareas
