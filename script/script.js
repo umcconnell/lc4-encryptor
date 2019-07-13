@@ -1,9 +1,11 @@
 import * as lc4 from "https://cdn.jsdelivr.net/gh/umcconnell/lc4@1/dist/main.js";
-import { debounce } from "./helpers.js";
+import { debounce, showSnackbar, createSnackbar } from "./helpers.js";
 
+let method = "encrypt",
+    mode = "lc4";
+    
 let switcher = document.getElementById("encryptorFlip"),
-    method = "encrypt",
-    mode = "lc4",
+    errorSnackbar = createSnackbar(),
     textareas = document.getElementsByTagName("textarea"),
     methodLabels = [...document.querySelectorAll(".encryptor__label")];
 
@@ -26,6 +28,7 @@ let update = debounce(function () {
     }).join("\n");
   } catch(err) {
     console.log(err);
+    showSnackbar()
   }
 }, 250);
 
@@ -40,9 +43,10 @@ function switchUI() {
 }
 
 function setup() {
+  document.body.insertAdjacentElement("beforeend", errorSnackbar);
+  
   document.body.addEventListener("input", () => {
-    console.log("Hi");
-    update()
+    update();
   });
   
   key.value = lc4.generateKey(null, mode);
