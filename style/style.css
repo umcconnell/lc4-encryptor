@@ -27,7 +27,7 @@ header {
 }
 
 main {
-  padding: 1em;
+  padding: 1em 1em 3em 1em;
   display: inline-block;
   max-width: 750px;
   align-self: center;
