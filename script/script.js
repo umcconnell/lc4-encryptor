@@ -18,6 +18,8 @@ let key = document.getElementById("key"),
 
 let update = debounce(function () {
   try {
+    if (!textareas[0].value) return;
+    console.log(textareas[0].value.split("\n"));
     textareas[1].value = lc4[method]({
       mode,
       message: textareas[0].value.split("\n"),
@@ -28,7 +30,7 @@ let update = debounce(function () {
     }).join("\n");
   } catch(err) {
     console.log(err);
-    showSnackbar()
+    showSnackbar(errorSnackbar, err.message, err.message.length > 100 ? 5000 : undefined);
   }
 }, 250);
 

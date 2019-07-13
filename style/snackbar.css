@@ -23,6 +23,7 @@
 
 .snackbar.snackbar--error {
   background-color: red;
+  color: #fff;
 }
 
 @keyframes zoomIn {
