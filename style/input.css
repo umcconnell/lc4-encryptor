@@ -1,19 +1,8 @@
-label {
-  display: block;
-  text-align: left;
-  margin: 1em 0 .5em 0;
-}
-
 input,
 textarea {
   font-size: 1rem;
   padding: .75em;
   border: 1px solid #ddd;
-}
-
-input:focus,
-textarea:focus {
-  border-color: var(--main-color);
 }
 
 input {
@@ -23,6 +12,17 @@ input {
 textarea {
   min-height: 10em;
   resize: vertical
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--main-color);
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin: 1em 0 .5em 0;
 }
 
 .input-container {
@@ -43,6 +43,12 @@ textarea {
   padding: 0 .4em 0.15em .4em;
 }
 
+.input-container input:focus + .input-container__icon {
+  border-color: var(--main-color);
+  border-left-color: #ddd;
+}
+
+
 .toggle {
   --toggle-width: 3.6em;
   --toggle-height: 1.8em;
@@ -55,7 +61,6 @@ textarea {
   align-items: center;
   cursor: pointer;
 }
-
 .toggle--full {
   display: flex;
 }
@@ -91,6 +96,10 @@ textarea {
   border-radius: var(--indicator-radius);
   background: var(--indicator-color);
   transition: 0.3s ease-out;
+}
+
+.toggle input:focus + .toggle__widget {
+  --indicator-color: var(--main-color);
 }
 
 .toggle input:checked + .toggle__widget::after {
