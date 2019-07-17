@@ -18,7 +18,8 @@ let key = document.getElementById("key"),
 
 let update = debounce(function () {
   try {
-    if (!textareas[0].value) return;
+    if (textareas[0].value == "") textareas[1].value = "";
+    else if (!textareas[0].value) return;
 
     textareas[1].value = lc4[method]({
       mode,
