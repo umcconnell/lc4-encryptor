@@ -19,8 +19,18 @@ let modeSwitch = document.getElementById("mode"),
 
 let update = debounce(function () {
   try {
-    if (textareas[0].value == "") textareas[1].value = "";
+    if (textareas[0].value == "") return textareas[1].value = "";
     else if (!textareas[0].value) return;
+    
+    console.log(mode);
+    console.log({
+      mode,
+      message: textareas[0].value.split("\n"),
+      key: key.value,
+      nonce: !!nonce.value && nonce.value,
+      signature: !!signature.value && signature.value.length > 9 && signature.value,
+      headerData: !!headerData.value && headerData.value
+    });
 
     textareas[1].value = lc4[method]({
       mode,
@@ -46,18 +56,20 @@ function switchUI() {
   methodLabels.reverse();
 }
 
-function setup() {
-  document.body.insertAdjacentElement("beforeend", errorSnackbar);
-  
-  document.body.addEventListener("input", update);
-  
-  
-  modeSwitch.addEventListener("input", () => {
-    mode = modeSwitch.checked ? "lc4" : "ls47";
-  })
-  
+function populateValues() {
   key.value = lc4.generateKey(mode);
   nonce.value = lc4.generateNonce(mode);
+}
+
+function setup() {
+  document.body.insertAdjacentElement("beforeend", errorSnackbar);
+  document.body.addEventListener("input", update);
+  modeSwitch.addEventListener("input", () => {
+    mode = modeSwitch.checked ? "ls47" : "lc4";
+    populateValues()
+  })
+  
+  populateValues();
   
   keyBtn.addEventListener("click", () => {
     key.value = lc4.generateKey(mode);
