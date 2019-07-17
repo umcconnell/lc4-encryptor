@@ -21,8 +21,9 @@
       
       <p>
         ElsieFour ("LC4") was created by Alan Kaminsky. It is a low-tech cipher, which means
-        that it is meant to be easily computable by hand. LC4 is intended to encrypt English
-        sentences and thus consists only of characters and can not encrypt individual bits.
+        that it is meant to be easily computable by hand and optionally with the help of
+        wooden tiles or cards. LC4 is intended to encrypt English sentences and thus consists
+        only of characters and can not encrypt individual bits.
       </p>
       
       <h3 id="terms">Terms</h3>
@@ -47,11 +48,25 @@
         <em><u>header data:</u></em><br>
         Additional authentication; receiver must know header data
       </p>
+      <p>
+        <em><u>state:</u></em><br>
+        System state as a 6x6 grid of the alphabet used for encryption and decrpytion
+      </p>
+      <p>
+        <em><u>marker:</u></em><br>
+        Reference to current marker-character deciding how to shift state
+      </p>
       
       <h3 id="encryption">Encryption</h3>
       
       <p>
-        
+        In the first step the state is initialized by creating a 6x6 grid and filling
+        in the key row-by-row. The marker is set on the top-left character. Every
+        character is assigned two numbers (possibly written on the tiles/cards): A
+        number <em>r</em> and <em>d</em> indicating the index of the row
+      </p>
+      <p>
+        To encrypt a character
       </p>
       
       
