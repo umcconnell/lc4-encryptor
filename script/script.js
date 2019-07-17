@@ -22,24 +22,15 @@ let update = debounce(function () {
     if (textareas[0].value == "") return textareas[1].value = "";
     else if (!textareas[0].value) return;
     
-    console.log(mode);
-    console.log({
+    textareas[1].value = lc4[method]({
       mode,
       message: textareas[0].value.split("\n"),
       key: key.value,
       nonce: !!nonce.value && nonce.value,
       signature: !!signature.value && signature.value.length > 9 && signature.value,
       headerData: !!headerData.value && headerData.value
-    });
-
-    textareas[1].value = lc4[method]({
-      mode,
-      message: textareas[0].value.split("\n"),
-      key: key.value,
-      nonce: !!nonce.value && nonce.value,
-      signature: !!signature.value && signature.value,
-      headerData: !!headerData.value && headerData.value
     }).join("\n");
+    
   } catch(err) {
     console.log(err);
     showSnackbar(errorSnackbar, err.message, err.message.length > 100 ? 5000 : undefined);
@@ -75,6 +66,7 @@ function setup() {
     key.value = lc4.generateKey(mode);
     update();
   });
+  
   nonceBtn.addEventListener("click", () => {
     nonce.value = lc4.generateNonce(mode);
     update();
