@@ -1,3 +1,4 @@
+/* Text Inputs */
 input,
 textarea {
   font-size: 1rem;
@@ -19,12 +20,14 @@ textarea:focus {
   border-color: var(--main-color);
 }
 
+/* Label */
 label {
   display: block;
   text-align: left;
   margin: 1em 0 .5em 0;
 }
 
+/* Input group */
 .input-container {
   display: flex;
   align-items: stretch;
@@ -48,7 +51,7 @@ label {
   border-left-color: #ddd;
 }
 
-
+/* Toggle switch */
 .toggle {
   --toggle-width: 3.6em;
   --toggle-height: 1.8em;
@@ -95,7 +98,7 @@ label {
   height: var(--size);
   border-radius: var(--indicator-radius);
   background: var(--indicator-color);
-  transition: 0.3s ease-out;
+  transition: 0.25s ease-out;
 }
 
 .toggle input:focus + .toggle__widget {

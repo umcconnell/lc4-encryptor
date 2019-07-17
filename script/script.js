@@ -3,13 +3,14 @@ import { debounce, showSnackbar, createSnackbar } from "./helpers.js";
 
 let method = "encrypt",
     mode = "lc4";
-    
+
 let switcher = document.getElementById("encryptorFlip"),
     errorSnackbar = createSnackbar(),
     textareas = document.getElementsByTagName("textarea"),
     methodLabels = [...document.querySelectorAll(".encryptor__label")];
 
-let key = document.getElementById("key"),
+let modeSwitch = document.getElementById("mode"),
+    key = document.getElementById("key"),
     keyBtn = document.getElementById("generateKey"),
     nonce = document.getElementById("nonce"),
     nonceBtn = document.getElementById("generateNonce"),
@@ -49,6 +50,11 @@ function setup() {
   document.body.insertAdjacentElement("beforeend", errorSnackbar);
   
   document.body.addEventListener("input", update);
+  
+  
+  modeSwitch.addEventListener("input", () => {
+    mode = modeSwitch.checked ? "lc4" : "ls47";
+  })
   
   key.value = lc4.generateKey(mode);
   nonce.value = lc4.generateNonce(mode);
