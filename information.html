@@ -23,14 +23,28 @@
         that it is meant to be easily computable by hand. LC4 is intended to encrypt English
         sentences and thus consists only of characters and can not encrypt individual bits.
       </p>
-      <h4>Quick info</h4>
-      <ul>
-        <li>
-          <em>LC4-alphabet</em>:
-          <code># _ 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t u v w x y z</code>
-        </li>
-        <li>LC4-key</li>
-      </ul>
+      <h3>Quick info</h3>
+      <p>
+        <em><u>alphabet:</u></em><br>
+        <code>#_23456789abcdefghijklmnopqrstuvwxyz</code>
+      </p>
+      <p>
+        <em><u>key:</u></em><br>
+        A random permutation of the LC4-alphabet
+      </p>
+      <p>
+        <em><u>nonce:</u></em><br>
+        Character sequence to randomize ciphertext; must be 6 characters or more
+      </p>
+      <p>
+        <em><u>signature:</u></em><br>
+        Signature that proves authenticity of the message
+      </p>
+      <p>
+        <em><u>header data:</u></em><br>
+        Additional authentication; 
+      </p>
+      
       <h2>LS47</h2>
       <p>
         Some explanation here... 
