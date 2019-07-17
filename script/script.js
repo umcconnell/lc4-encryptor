@@ -48,9 +48,7 @@ function switchUI() {
 function setup() {
   document.body.insertAdjacentElement("beforeend", errorSnackbar);
   
-  document.body.addEventListener("input", () => {
-    update();
-  });
+  document.body.addEventListener("input", update);
   
   key.value = lc4.generateKey(mode);
   nonce.value = lc4.generateNonce(mode);
