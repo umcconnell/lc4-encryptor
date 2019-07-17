@@ -27,7 +27,7 @@ let update = debounce(function () {
       key: key.value,
       nonce: !!nonce.value && nonce.value,
       signature: !!signature.value && signature.value,
-      headerData: !!headerData.value && headerData
+      headerData: !!headerData.value && headerData.value
     }).join("\n");
   } catch(err) {
     console.log(err);
