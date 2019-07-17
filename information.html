@@ -62,8 +62,15 @@
       <p>
         In the first step the state is initialized by creating a 6x6 grid and filling
         in the key row-by-row. The marker is set on the top-left character. Every
-        character is assigned two numbers (possibly written on the tiles/cards): A
-        number <em>r</em> and <em>d</em> indicating the index of the row
+        character is assigned two numbers (possibly written on the tiles/cards):
+      </p>
+      <p>
+        - a number <em>r = c mod 6</em> on the right side of the tile<br>
+        - a number <em>d = &lfloor;c / 6&rfloor;</em>(truncated division by 6) on the
+        bottom edge of the tile
+      </p>
+      <p>
+        ...where <em>c</em> is the zero-based index
       </p>
       <p>
         To encrypt a character
