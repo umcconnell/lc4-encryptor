@@ -26,7 +26,7 @@
         only of characters and can not encrypt individual bits.
       </p>
       
-      <h3 id="terms">Terms</h3>
+      <h3>Terms</h3>
       
       <p>
         <em><u>alphabet:</u></em><br>
@@ -57,7 +57,7 @@
         Reference to current marker-character deciding how to shift state
       </p>
       
-      <h3 id="encryption">Encryption</h3>
+      <h3>Encryption</h3>
       
       <p>
         In the first step the state is initialized by creating a <strong>6x6</strong>
@@ -71,8 +71,8 @@
         on the bottom edge of the tile
       </p>
       <p>
-        ...where <strong>c</strong> is the <strong>zero-based index</strong> of the character
-        in the alphabet (e.g. '#' is 0)
+        ...where <strong>c</strong> is the <strong>zero-based index</strong> of the
+        character in the alphabet (e.g. '#' is 0).
       </p>
       <p>
         To encrypt a character, locate it in your state grid. To find the corresponding
@@ -94,9 +94,22 @@
       
       <p>
         The decryption process is identical to the encryption process, except that
-        you decrypt a ciphertext character by moving <em>r</em> of the ciphertext
-        character to the <em>left</em> and <em>d</em> of the ciphertext character
-        to the <em>top</em>.
+        you decrypt a ciphertext character by moving <strong>r</strong> of the
+        ciphertext character to the <strong>left</strong> and <strong>d</strong> of
+        the ciphertext character to the <strong>top</strong>.
+      </p>
+      
+      <h3>Tutorial</h3>
+      
+      <p>
+        A tutorial about the encryption process can be found in the
+        <a
+           href="https://eprint.iacr.org/2017/339.pdf#page=12"
+           target="_blank"
+           rel="noreferrer"
+        >
+          LC4 white paper
+        </a>  
       </p>
       
       
@@ -110,6 +123,7 @@
       &lt;/&gt; with &hearts; by 
       <a href="https://github.com/umcconnell" target="_blank">Ulysse McConnell</a>
       <p>
+        <a href="./index.html">Home</a> |
         <a href="./about.html">About</a>
       </p>
     </footer>
