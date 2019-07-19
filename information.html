@@ -60,23 +60,24 @@
       <h3 id="encryption">Encryption</h3>
       
       <p>
-        In the first step the state is initialized by creating a 6x6 grid and filling
-        in the key row-by-row. The marker is set on the top-left character. Every
-        character is assigned two numbers (possibly written on the tiles/cards):
+        In the first step the state is initialized by creating a <strong>6x6</strong>
+        grid and filling in the key row-by-row. The marker is set on the top-left
+        character. Every character is assigned two numbers (possibly written on the
+        tiles/cards):
       </p>
       <p>
-        - a number <em>r = c mod 6</em> on the right side of the tile<br>
-        - a number <em>d = &lfloor;c / 6&rfloor;</em>(truncated division by 6) on the
-        bottom edge of the tile
+        - a number <strong>r = c mod 6</strong> on the right side of the tile<br>
+        - a number <strong>d = &lfloor;c / 6&rfloor;</strong>(truncated division by 6)
+        on the bottom edge of the tile
       </p>
       <p>
-        ...where <em>c</em> is the zero-based index of the character in the alphabet
-        (e.g. '#' is 0)
+        ...where <strong>c</strong> is the <strong>zero-based index</strong> of the character
+        in the alphabet (e.g. '#' is 0)
       </p>
       <p>
         To encrypt a character, locate it in your state grid. To find the corresponding
-        ciphertext character, move <em>r</em> fields to the right and <em>d</em> fields
-        down, possibly wrapping around the edge of the grid.
+        ciphertext character, move <strong>r fields to the right</strong> and
+        <strong>d fields down</strong>, possibly wrapping around the edge of the grid.
       </p>
       <p>
         Move the row of the plaintext one to the right, wrapping around the grid.
@@ -87,6 +88,15 @@
       <p>
         Move the marker, by going <em>r</em> of the ciphertext character to the
         right and <em>d</em> of the ciphertext character down.
+      </p>
+      
+      <h3 id="decryption">Decryption</h3>
+      
+      <p>
+        The decryption process is identical to the encryption process, except that
+        you decrypt a ciphertext character by moving <em>r</em> of the ciphertext
+        character to the <em>left</em> and <em>d</em> of the ciphertext character
+        to the <em>top</em>.
       </p>
       
       
