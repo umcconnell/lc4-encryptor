@@ -75,3 +75,7 @@ a {
   color: #fff;
   box-shadow: none;
 }
+
+code {
+  word-wrap: anywhere;
+}
