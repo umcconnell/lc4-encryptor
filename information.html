@@ -62,7 +62,8 @@
       
       <img
         src="https://cdn.glitch.com/37bed7b2-fbaa-4f3c-aa42-fd6bb811190f%2Finitial.png?v=1566235167895"
-        class="img-dynamic"
+        class="img--dynamic"
+        alt="Initial grid state"
       >
       <p>
         In the first step the state is initialized by creating a <strong>6x6</strong>
@@ -79,13 +80,31 @@
         ...where <strong>c</strong> is the <strong>zero-based index</strong> of the
         character in the alphabet (e.g. '#' is 0).
       </p>
+      <img
+        src="https://cdn.glitch.com/37bed7b2-fbaa-4f3c-aa42-fd6bb811190f%2Fencryption.png?v=1566235167987"
+        class="img--dynamic"
+        alt="Encrypting plaintext character 'a' to 's'"
+      >
       <p>
         To encrypt a character, locate it in your state grid. To find the corresponding
-        ciphertext character, move <strong>r fields to the right</strong> and
-        <strong>d fields down</strong>, possibly wrapping around the edge of the grid.
+        ciphertext character, move, according to the marker, <strong>r fields to the
+        right</strong> and <strong>d fields down</strong>, possibly wrapping around the
+        edge of the grid.
       </p>
+      <img
+        src="https://cdn.glitch.com/37bed7b2-fbaa-4f3c-aa42-fd6bb811190f%2Fshift-column-1.png?v=1566235168075"
+        class="img--dynamic"
+        alt="Shifting plaintext-row one to the right"
+      >
+      <img
+        src="https://cdn.glitch.com/37bed7b2-fbaa-4f3c-aa42-fd6bb811190f%2Fshift-column-2.png?v=1566235169638"
+        class="img--dynamic"
+        alt="Shifting plaintext-row one to the right"
+      >
       <p>
         Move the row of the plaintext one to the right, wrapping around the grid.
+      </p>
+      <p>
         Move the column of the ciphertext character one down, also wrapping around the
         grid. If the row or column of the marker is moved, move the marker along with
         its character.
